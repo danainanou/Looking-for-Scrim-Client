@@ -1,6 +1,6 @@
 angular
-  .module('esports-app')
-  .config(Router);
+.module('esports-app')
+.config(Router);
 
 Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
 function Router($stateProvider, $locationProvider, $urlRouterProvider){
@@ -14,20 +14,47 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   .state('register', {
     url: '/register',
     templateUrl: '/js/views/register.html',
-    controller: 'RegisterCtrl',
-    controllerAs: 'register'
+    controller: 'RegisterCtrl as register'
   })
   .state('login', {
     url: '/login',
     templateUrl: '/js/views/login.html',
-    controller: 'LoginCtrl',
-    controllerAs: 'login'
+    controller: 'LoginCtrl as login'
   })
   .state('usersIndex', {
     url: '/users',
     templateUrl: '/js/views/users/index.html',
-    controller: 'UsersIndexCtrl',
-    controllerAs: 'usersIndex'
+    controller: 'UsersIndexCtrl as usersIndex'
+  })
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl as usersShow'
+  })
+  .state('usersEdit', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/edit.html',
+    controller: 'UsersEditCtrl as usersEdit'
+  })
+  .state('postsIndex', {
+    url: '/posts',
+    templateUrl: '/js/views/posts/posts.index.html',
+    controller: 'PostsIndexCtrl as postsIndex'
+  })
+  .state('postsShow', {
+    url: '/posts/:id',
+    templateUrl: '/js/views/posts/posts.show.html',
+    controller: 'PostsShowCtrl as postsShow'
+  })
+  .state('postsNew', {
+    url: '/posts/new',
+    templateUrl: '/js/views/posts/posts.new.html',
+    controller: 'PostsNewCtrl as postsNew'
+  })
+  .state('postsEdit', {
+    url: '/posts/:id',
+    templateUrl: '/js/views/posts/posts.edit.html',
+    controller: 'PostsEditCtrl as postsEdit'
   });
 
   $urlRouterProvider.otherwise('/');

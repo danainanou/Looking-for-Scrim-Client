@@ -1,0 +1,17 @@
+<h1>{{ postsShow.post.title }}</h1>
+
+<div>
+  <h2>Description</h2>
+  <p> {{ postsShow.post.body }}</p>
+
+  <h3> {{ postsShow.post.server }}</h3>
+
+  <h4> {{ postsShow.post.views.length }}</h4>
+</div>
+<div>
+  <h2> Posted by <a ui-sref="usersShow({id: postsShow.post.user.id})">{{ postsShow.post.user.username }}</a>
+  </h2>
+</div>
+
+<a ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
+<button ng-click="postsShow.delete(postsShow.post)">Delete</button>

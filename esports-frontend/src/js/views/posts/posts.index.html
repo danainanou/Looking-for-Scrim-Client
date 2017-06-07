@@ -1,0 +1,8 @@
+<h1>Players Looking For Teams</h1>
+
+<div ng-repeat="post in postsIndex.posts">
+  {{ post.title }}
+  <a ui-sref="postsShow({ id: post.id })">View</a>
+</div>
+
+<a ui-sref="postsNew">New Post</a>
