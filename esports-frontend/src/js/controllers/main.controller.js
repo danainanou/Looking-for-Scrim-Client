@@ -9,7 +9,7 @@ function MainCtrl($rootScope, CurrentUserService, $state) {
   vm.isNavCollapsed = true;
 
   $rootScope.$on('loggedIn', () => {
-    $rootScope.user = CurrentUserService.currentUser;
+    vm.user = CurrentUserService.currentUser;
   });
 
   $rootScope.$on('loggedOut', () => {
