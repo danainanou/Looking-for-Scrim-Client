@@ -1,1 +1,33 @@
 // Import all of your scss files here
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url(/fonts/lol-fonts/beaufortforlol-regular.otf)
+       url(/fonts/lol-fonts/beaufortforlol-bold.otf)
+       url(/fonts/lol-fonts/beaufortforlol-bolditalic.otf)
+       url(/fonts/lol-fonts/beaufortforlol-italic.otf);
+}
+
+
+.comments {
+  border: 1px solid black;
+}
+
+body {
+  background-image: url(/images/lol-background2.png);
+  font-family: 'Beaufort';
+}
+
+h1 {
+  color: white;
+  // font-weight: bold;
+}
+
+h2 a {
+  font-family: 'Playfair Display', serif;
+}
+
+.logo {
+  width: 25px;
+  margin: 0;
+}

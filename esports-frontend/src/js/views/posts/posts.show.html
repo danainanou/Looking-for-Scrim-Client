@@ -15,3 +15,24 @@
 
 <a ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
 <button ng-click="postsShow.delete(postsShow.post)">Delete</button>
+
+
+
+<div class="comments">
+  <h3>Comments</h3>
+  <ul>
+    <li ng-repeat="comment in comments.comment">
+      <ul>
+        <li>
+          <br>
+          <p>{{ comment.body }}</p>
+          <br>
+          <p>{{ comment.author }}</p>
+          <br>
+          <button ng-click="postsShow.commentDelete(comment)" ng-if="comment.user.id === main.user.id" class="btn btn-danger">Delete</button>
+          <button ng-click="postsShow.commentReply(comment)" ng-if="comment.user.id === main.user.id" class="btn btn-success">Reply</button>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

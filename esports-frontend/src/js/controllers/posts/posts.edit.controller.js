@@ -18,5 +18,4 @@ function PostsEditCtrl(API, $stateParams, $state, Post) {
         $state.go('postsIndex');
       });
   }
-
 }
