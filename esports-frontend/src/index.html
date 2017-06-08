@@ -10,24 +10,24 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed"></button>
-      <a class="navbar-brand" href="postsIndex"><img class="logo" src="/images/lol-logo.png" alt=""></a>
+      <a class="navbar-brand" ui-sref="postsIndex"><img class="logo" src="/images/lol-logo.png" alt=""></a>
     </div>
-    <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
+    <div class="collapse navbar-collapse" uib-collapse="!main.isNavCollapsed">
       <ul class="nav navbar-nav pull-right">
-        <li ng-if="main.isAuthenticated()"><a ui-sref="postsIndex">Ads</a></li>
-        <li ng-if="main.isAuthenticated()"><a ui-sref="postsNew">Create an Ad</a></li>
-        <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
-        <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
-        <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
+        <li ng-show="main.user"><a ui-sref="postsIndex">Ads</a></li>
+        <li ng-show="main.user"><a ui-sref="postsNew">Create an Ad</a></li>
+        <li ng-if="!main.user"><a ui-sref="login">Login</a></li>
+        <li ng-if="!main.user"><a ui-sref="register">Register</a></li>
+        <li ng-show="main.user"><a ng-click="main.logout()" href="#">Logout</a></li>
       </ul>
     </div>
   </nav>
 
-  <main ui-view></main>
+  <main ui-view class="container-fluid"></main>
 
 </body>
 </html>

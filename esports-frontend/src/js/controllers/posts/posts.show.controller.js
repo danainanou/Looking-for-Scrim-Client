@@ -3,13 +3,26 @@ angular
 .controller('PostsShowCtrl', PostsShowCtrl);
 
 PostsShowCtrl.$inject =
-['API', '$stateParams', '$state', 'Post'];
+['API', '$stateParams', '$state', 'Post', 'Comment'];
 
-function PostsShowCtrl(API, $stateParams, $state, Post) {
-  const vm = this;
+function PostsShowCtrl(API, $stateParams, $state, Post, Comment) {
+  const vm  = this;
   vm.delete = postsDelete;
+  vm.createComment = createComment;
+  vm.post   = Post.get($stateParams);
 
-  vm.post = Post.get($stateParams);
+
+  function createComment() {
+    vm.comment.post_id = $stateParams.id;
+
+    Comment
+      .save(vm.comment)
+      .$promise
+      .then(comment => {
+        vm.post.comments.push(comment);
+        vm.comment.body = '';
+      });
+  }
 
   function postsDelete() {
     Post

@@ -1,8 +1,18 @@
-<h1>Players Looking For Teams</h1>
+<h1>Looking For More</h1>
 
-<div ng-repeat="post in postsIndex.posts">
-  {{ post.title }}
-  <a ui-sref="postsShow({ id: post.id })">View</a>
-</div>
+
+<div class="row">
+  <div class="col-sm-3" ng-repeat="post in postsIndex.posts">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">{{ post.title }}</h3>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a ui-sref="postsShow({ id: post.id })">View</a>
+      </div>
+    </div>
+  </div>
 
 <a ui-sref="postsNew">New Post</a>
+
+<!-- show comments for post -->
+<!-- create form for adding a new comment -->

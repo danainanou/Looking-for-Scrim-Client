@@ -17,8 +17,20 @@
 <button ng-click="postsShow.delete(postsShow.post)">Delete</button>
 
 
+<h2>Comments</h2>
+<ul>
+  <li ng-repeat="comment in postsShow.post.comments">
+    {{ comment.body }}
+  </li>
+</ul>
 
-<div class="comments">
+<form name="postsShow.commentForm" ng-submit="postsShow.createComment()">
+  <label for="body">Body</label>
+  <textarea name="body" rows="8" cols="80" ng-model="postsShow.comment.body"></textarea>
+  <input type="submit" name="" value="Add Comment">
+</form>
+
+<!-- <div class="comments">
   <h3>Comments</h3>
   <ul>
     <li ng-repeat="comment in comments.comment">
@@ -35,4 +47,4 @@
       </ul>
     </li>
   </ul>
-</div>
+</div> -->
