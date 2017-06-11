@@ -2,10 +2,29 @@
 
 <form ng-submit="usersEdit.update()">
   <div class="form-group">
-    <input class="form-control" type="text" name="username" ng-model="usersEdit.user.username" placeholder="Username">
+    <label for="username">Username</label>
+    <input class="form-group" type="text" name="username" ng-model="usersEdit.user.username" >
+    <label for="email">Email</label>
+    <input class="form-control" type="email" name="email" ng-model="usersEdit.user.email" >
+    <label for="about">About you or your team</label>
+    <div class="form-group">
+      <textarea class="form-control" name="about" ng-model="usersEdit.user.about"></textarea>
+    </div>
+    <label for="rank">Current Rank</label>
+    <div class="form-group" name="rank">
+      <select class="form-control" ng-model="usersEdit.user.rank">
+        <option>Bronze</option>
+        <option>Silver</option>
+        <option>Gold</option>
+        <option>Platinum</option>
+        <option>Diamond</option>
+        <option>Master</option>
+        <option>Challenger</option>
+      </select>
+    </div>
+    <label for="link">Link to your Summoner or Team Profile</label>
+    <input class="form-control" type="text" name="link" ng-model="usersEdit.user.link">
   </div>
-  <div class="form-group">
-    <input class="form-control" type="email" name="email" ng-model="usersEdit.user.email" placeholder="Email">
-  </div>
-  <input class="btn btn-primary" type="submit" value="Submit" />
+
+  <input class="btn" type="submit" value="Submit" />
 </form>

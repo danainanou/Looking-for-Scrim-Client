@@ -3,4 +3,11 @@
   <h1 class="h_profile"> {{ usersShow.user.username }}</h1>
 </div>
 
-<a ui-sref="usersEdit({id: usersShow.user.id })">Edit</a>
+<h2>About: {{ usersShow.user.about }}</h2>
+
+<h3>Current Rank: {{ usersShow.user.rank }}</h3>
+
+<h4>Profile Link: <a ui-sref="#">{{usersShow.user.link }}</a></h4>
+
+
+<a class="btn edit" ui-sref="usersEdit({id: usersShow.user.id })">Edit</a>

@@ -13,38 +13,18 @@
   </h2>
 </div>
 
-<a ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
-<button ng-click="postsShow.delete(postsShow.post)">Delete</button>
+<a class="btn edit" ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
+<button class="btn" ng-click="postsShow.delete(postsShow.post)">Delete</button>
 
-
-<h2>Comments</h2>
-<ul>
-  <li ng-repeat="comment in postsShow.post.comments">
+<ul class="comments">
+  <li ng-repeat="comment in postsShow.post.comments"> {{ comment.user.username }}:
     {{ comment.body }}
   </li>
 </ul>
-
+<div class="form-group">
 <form name="postsShow.commentForm" ng-submit="postsShow.createComment()">
-  <label for="body">Body</label>
-  <textarea name="body" rows="8" cols="80" ng-model="postsShow.comment.body"></textarea>
-  <input type="submit" name="" value="Add Comment">
+    <label for="body">Comments</label>
+  <textarea class="form-control" name="body" rows="3" cols="80" ng-model="postsShow.comment.body"></textarea>
+  <input class="btn" type="submit" name="" value="Add Comment">
 </form>
-
-<!-- <div class="comments">
-  <h3>Comments</h3>
-  <ul>
-    <li ng-repeat="comment in comments.comment">
-      <ul>
-        <li>
-          <br>
-          <p>{{ comment.body }}</p>
-          <br>
-          <p>{{ comment.author }}</p>
-          <br>
-          <button ng-click="postsShow.commentDelete(comment)" ng-if="comment.user.id === main.user.id" class="btn btn-danger">Delete</button>
-          <button ng-click="postsShow.commentReply(comment)" ng-if="comment.user.id === main.user.id" class="btn btn-success">Reply</button>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div> -->
+</div>

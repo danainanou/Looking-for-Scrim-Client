@@ -27,4 +27,9 @@ function MainCtrl($rootScope, CurrentUserService, $state) {
     vm.isNavCollapsed = true;
   });
 
+  $rootScope.playAudio = function() {
+    var audio = new Audio('../sounds/Lulu.wav');
+    audio.play();
+  };
+
 }

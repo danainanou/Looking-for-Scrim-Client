@@ -1,32 +1,34 @@
-<h1>New Post</h1>
+<h1>Create your Ad!</h1>
 
 <form ng-submit="postsNew.create()">
-  <fieldset>
+  <div class="form-group">
     <div>
       <label for="name">Title</label>
-      <input ng-model="postsNew.post.title" id="title" type="text" placeholder="Your ad's title">
+      <input class="form-control" ng-model="postsNew.post.title" type="text">
     </div>
-    <div>
+    <div class="form-group">
       <label for="body">Description</label>
-      <textarea ng-model="postsNew.post.body" name="description" rows="8" cols="80" placeholder="Your ad's description"></textarea>
+      <textarea class="form-control" ng-model="postsNew.post.body" name="description" rows="8" cols="80"></textarea>
     </div>
-    <label for="region">Server</label>
-    <select ng-model="postsNew.post.server" class="region" placeholder="Select your region">
-      <option>Brazil</option>
-      <option>Europe Nordic and East</option>
-      <option>Europe West</option>
-      <option>Latin America North</option>
-      <option>Latin America South</option>
-      <option>North America</option>
-      <option>Oceania</option>
-      <option>Russia</option>
-      <option>Turkey</option>
-      <option>Japan</option>
-      <option>South East Asia</option>
-      <option>Republic of Korea</option>
-    </select>
+    <label for="region">Region</label>
+    <div class="form-group">
+      <select class="form-control" ng-model="postsNew.post.server">
+        <option>Brazil</option>
+        <option>Europe Nordic and East</option>
+        <option>Europe West</option>
+        <option>Latin America North</option>
+        <option>Latin America South</option>
+        <option>North America</option>
+        <option>Oceania</option>
+        <option>Russia</option>
+        <option>Turkey</option>
+        <option>Japan</option>
+        <option>South East Asia</option>
+        <option>Republic of Korea</option>
+      </select>
+    </div>
     <div>
-      <input type="submit" class="pure-button pure-button-primary" value="Submit">
+      <input type="submit" class="btn" value="Submit">
     </div>
-  </fieldset>
+  </div>
 </form>

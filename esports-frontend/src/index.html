@@ -13,8 +13,12 @@
 <body ng-controller="MainCtrl as main">
   <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed"></button>
-      <a class="navbar-brand" ui-sref="postsIndex"><img class="logo" src="/images/lol-logo.png" alt=""></a>
+      <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home"><img class="logo" src="/images/lol-logo.png" alt=""></a>
     </div>
     <div class="collapse navbar-collapse" uib-collapse="!main.isNavCollapsed">
       <ul class="nav navbar-nav pull-right">
@@ -27,7 +31,14 @@
     </div>
   </nav>
 
-  <main ui-view class="container-fluid"></main>
-
+  <main ui-view class="container-fluid">
+    <div class="container-border">
+    </div>
+  </main>
+<footer class="footer">
+  <div class="container footer-text">
+    <h3 class="text-muted">Made with love for LoL and e-sports!</h3>
+  </div>
+</footer>
 </body>
 </html>
