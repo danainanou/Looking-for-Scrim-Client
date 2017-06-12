@@ -1,13 +1,14 @@
 <h1>Looking For More</h1>
 <div class="row">
   <div class="col-sm-3" ng-repeat="post in postsIndex.posts">
-    <div class="card">
-      <div class="card-block">
-        <h3 class="card-title">{{ post.title }}</h3>
-        <p class="card-text">Click to find out more</p>
-          <a class="btn edit" ui-sref="postsShow({ id: post.id })">View</a>
+    <a ui-sref="postsShow({ id: post.id })">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">{{ post.title }}</h3>
+          <p class="card-text">Click to find out more</p>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 

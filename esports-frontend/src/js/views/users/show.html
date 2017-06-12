@@ -7,7 +7,7 @@
 
 <h3>Current Rank: {{ usersShow.user.rank }}</h3>
 
-<h4>Profile Link: <a ui-sref="#">{{usersShow.user.link }}</a></h4>
+<h4><a ui-sref="{{usersShow.user.link }}">Summoner Profile on lolskill.net</a></h4>
 
 
-<a class="btn edit" ui-sref="usersEdit({id: usersShow.user.id })">Edit</a>
+<a class="btn" ui-sref="usersEdit({id: usersShow.user.id })">Edit</a>

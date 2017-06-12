@@ -1,33 +1,37 @@
 <div class="row">
   <div class="col-sm-6">
-    <h2>{{ postsShow.post.title }}</h2>
-    <p> {{ postsShow.post.body }}</p>
-
-    <h4>Region: {{ postsShow.post.server }}</h4>
-
+    <div class="post-title">
+      <h2>{{ postsShow.post.title }}</h2>
+    </div>
+    <div class="post-body">
+      <p> {{ postsShow.post.body }}</p>
+    </div>
+    <div class="post-region">
+      <h4>Region: <span class="region">{{ postsShow.post.server }}</span></h4>
+    </div>
     <div>
-      <a class="btn edit" ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
       <button class="btn" ng-click="postsShow.delete(postsShow.post)">Delete</button>
+      <a class="btn edit" ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
     </div>
   </div>
 
   <div class="col-sm-6">
-    <label for="body">Comments</label>
+    <label class="comments-label" for="body">Comments</label>
     <ul class="comments">
       <li ng-repeat="comment in postsShow.post.comments"> {{ comment.user.username }}:
         {{ comment.body }}
       </li>
     </ul>
-    <div class="form-group">
+    <div class="form-group comments-form">
       <form name="postsShow.commentForm" ng-submit="postsShow.createComment()">
-        <textarea class="form-control" name="body" rows="3" cols="80" ng-model="postsShow.comment.body"></textarea>
-        <input class="btn" type="submit" name="" value="Add Comment">
+        <textarea class="form-control" name="body" rows="5" cols="90" ng-model="postsShow.comment.body"></textarea>
+        <input class="btn comments-btn" type="submit" name="" value="Add Comment">
       </form>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row posted-by">
   <h3> Posted by <a class="username" ui-sref="usersShow({id: postsShow.post.user.id})">{{ postsShow.post.user.username }}</a>
   </h3>
 </div>
