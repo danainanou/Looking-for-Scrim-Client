@@ -1,30 +1,33 @@
-<h1>{{ postsShow.post.title }}</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <h2>{{ postsShow.post.title }}</h2>
+    <p> {{ postsShow.post.body }}</p>
 
-<div>
-  <h2>Description</h2>
-  <p> {{ postsShow.post.body }}</p>
+    <h4>Region: {{ postsShow.post.server }}</h4>
 
-  <h3> {{ postsShow.post.server }}</h3>
+    <div>
+      <a class="btn edit" ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
+      <button class="btn" ng-click="postsShow.delete(postsShow.post)">Delete</button>
+    </div>
+  </div>
 
-  <h4> {{ postsShow.post.views.length }}</h4>
-</div>
-<div>
-  <h2> Posted by <a ui-sref="usersShow({id: postsShow.post.user.id})">{{ postsShow.post.user.username }}</a>
-  </h2>
-</div>
-
-<a class="btn edit" ui-sref="postsEdit({id: postsShow.post.id })">Edit</a>
-<button class="btn" ng-click="postsShow.delete(postsShow.post)">Delete</button>
-
-<ul class="comments">
-  <li ng-repeat="comment in postsShow.post.comments"> {{ comment.user.username }}:
-    {{ comment.body }}
-  </li>
-</ul>
-<div class="form-group">
-<form name="postsShow.commentForm" ng-submit="postsShow.createComment()">
+  <div class="col-sm-6">
     <label for="body">Comments</label>
-  <textarea class="form-control" name="body" rows="3" cols="80" ng-model="postsShow.comment.body"></textarea>
-  <input class="btn" type="submit" name="" value="Add Comment">
-</form>
+    <ul class="comments">
+      <li ng-repeat="comment in postsShow.post.comments"> {{ comment.user.username }}:
+        {{ comment.body }}
+      </li>
+    </ul>
+    <div class="form-group">
+      <form name="postsShow.commentForm" ng-submit="postsShow.createComment()">
+        <textarea class="form-control" name="body" rows="3" cols="80" ng-model="postsShow.comment.body"></textarea>
+        <input class="btn" type="submit" name="" value="Add Comment">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <h3> Posted by <a class="username" ui-sref="usersShow({id: postsShow.post.user.id})">{{ postsShow.post.user.username }}</a>
+  </h3>
 </div>
