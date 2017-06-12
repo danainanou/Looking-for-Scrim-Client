@@ -24,6 +24,7 @@
       <ul class="nav navbar-nav pull-right">
         <li ng-show="main.user"><a ui-sref="postsIndex">Ads</a></li>
         <li ng-show="main.user"><a ui-sref="postsNew">Create an Ad</a></li>
+        <li ng-show="main.user"><a ui-sref="usersShow">Account</a></li>
         <li ng-if="!main.user"><a ui-sref="login">Login</a></li>
         <li ng-if="!main.user"><a ui-sref="register">Register</a></li>
         <li ng-show="main.user"><a ng-click="main.logout()" href="#">Logout</a></li>
@@ -35,10 +36,16 @@
     <div class="container-border">
     </div>
   </main>
-<footer class="footer">
-  <div class="container footer-text">
-    <h3 class="text-muted">Made with love for LoL and e-sports!</h3>
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="container footer-text">
+      <h3 class="text-muted">
+        <img class="kata-gif" src="/images/poro.png" alt="Poro">
+        <img class="kata-gif" src="/images/katarina.gif" alt="Katarina">
+        The only League of Legends dedicated team finder platform!
+        <img class="kata-gif" src="/images/katarina.gif" alt="Katarina">
+        <img class="kata-gif" src="/images/poro.png" alt="Poro">
+      </h3>
+    </div>
+  </footer>
 </body>
 </html>

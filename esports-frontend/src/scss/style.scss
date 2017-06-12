@@ -23,16 +23,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-// .brandname {
-//   font-size: 25px;
-//   font-family: 'Playfair Display', serif;
-//   font-weight: bold;
-//   text-align: center;
-//   margin: auto 0;
-//   padding-top: 10px;
-//   font-style: italic;
-// }
-
 .logo {
   width: 45px;
   margin: 0;
@@ -172,14 +162,14 @@ form {
   line-height: 50px;
   text-align: center;
   transform:translateX(100%);
-  animation: scroll-left 9s linear infinite;
+  animation: scroll-left 15s linear infinite;
 }
 @keyframes scroll-left {
   0% {
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
 }
 
@@ -268,6 +258,7 @@ form {
 }
 
 .comments-label {
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
   margin-top: 20px;
   font-style: italic;
@@ -275,6 +266,10 @@ form {
 
 .comments-btn {
   margin-top: 10px;
+}
+
+.comment-username {
+  color: #C1C9BA;
 }
 
 .post-body {
@@ -289,6 +284,8 @@ form {
   margin: 0 auto;
   margin-top: 10px;
   font-size: 20px;
+  color: #C1C9BA;
+  padding: 5px;
 }
 
 .post-title {
@@ -299,7 +296,7 @@ form {
 .post-region {
   text-align: left;
   margin-left: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 .region {
@@ -342,4 +339,17 @@ form {
   text-decoration: none;
   background: #FBD886;
   color: #5B4F50;
+}
+
+.card-title {
+  height: 150px;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.kata-gif {
+  width: 45px;
+  margin: 0;
 }

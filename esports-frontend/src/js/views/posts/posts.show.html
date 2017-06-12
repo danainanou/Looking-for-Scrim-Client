@@ -18,7 +18,8 @@
   <div class="col-sm-6">
     <label class="comments-label" for="body">Comments</label>
     <ul class="comments">
-      <li ng-repeat="comment in postsShow.post.comments"> {{ comment.user.username }}:
+      <li ng-repeat="comment in postsShow.post.comments">
+        <span class="comment-username">{{ comment.user.username }}:</span>
         {{ comment.body }}
       </li>
     </ul>

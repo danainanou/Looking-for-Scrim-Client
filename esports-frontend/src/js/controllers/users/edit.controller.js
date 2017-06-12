@@ -13,7 +13,7 @@ function UsersEditCtrl(API, $stateParams, $state, User) {
       .update({ id: $stateParams.id }, vm.user)
       .$promise
       .then(() => {
-        $state.go('usersIndex');
+        $state.go('postsIndex');
       });
   }
 
