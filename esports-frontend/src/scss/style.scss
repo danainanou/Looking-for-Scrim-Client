@@ -90,6 +90,7 @@ a:hover {
       a:hover {
         color: #FBD886;
         font-size: 18px;
+        text-decoration: none;
       }
       a:focus {
         color: #FBD886;
@@ -109,6 +110,7 @@ a:hover {
   color: #FBD886;
   transition: 0.15s ease-in-out;
   border: 0;
+  border-radius: 0;
 }
 
 .btn:hover {
@@ -128,6 +130,7 @@ form {
   width: 60%;
   font-size: 20px;
   margin: 0 auto;
+  border-radius: 0;
 }
 
 .form-control {
@@ -136,10 +139,15 @@ form {
   border: 0;
   box-shadow: none;
   font-size: 16px;
+  border-radius: 0;
+  border: 1px solid #5B4F50;
+  box-shadow: 0px 0px 1px 1px #C1C9BA;
+  margin-bottom: 10px;
 }
 
 .form-control:focus {
   box-shadow: none;
+  border-color: #5B4F50;
 
 }
 
@@ -235,6 +243,10 @@ form {
   }
 }
 
+.wat:hover {
+  text-decoration: none;
+}
+
 .comments {
   background: linear-gradient(120deg,rgba(193, 201, 186, 0.3)0%, rgba(251, 216, 134, 0.3)100%);
   list-style: none;
@@ -316,4 +328,18 @@ form {
 
 .view {
   margin-top: 70px;
+}
+
+.current-rank {
+  margin-right: 210px;
+}
+
+.acc-edit {
+  margin-top: 200px;
+}
+
+.visit-profile:hover {
+  text-decoration: none;
+  background: #FBD886;
+  color: #5B4F50;
 }

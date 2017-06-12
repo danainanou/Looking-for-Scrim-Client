@@ -3,11 +3,19 @@
   <h1 class="h_profile"> {{ usersShow.user.username }}</h1>
 </div>
 
-<h2>About: {{ usersShow.user.about }}</h2>
+<div class="post-body">
+  <p>{{ usersShow.user.about }}</p>
+</div>
 
-<h3>Current Rank: {{ usersShow.user.rank }}</h3>
+<div class="row">
+  <div class="col-sm-6">
+    <h3 class="current-rank">Current Rank: {{ usersShow.user.rank }}</h3>
+  </div>
+  <div class="col-sm-6">
+    <h3><a class="visit-profile" ui-sref="{{usersShow.user.link }}">Visit my Summoner Profile on lolskill.net</a></h3>
+  </div>
+</div>
 
-<h4><a ui-sref="{{usersShow.user.link }}">Summoner Profile on lolskill.net</a></h4>
 
 
-<a class="btn" ui-sref="usersEdit({id: usersShow.user.id })">Edit</a>
+<a class="btn acc-edit" ui-sref="usersEdit({id: usersShow.user.id })">Edit Account</a>
