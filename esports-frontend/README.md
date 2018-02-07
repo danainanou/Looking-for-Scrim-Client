@@ -1,64 +1,47 @@
-### Using this Angular Gulp Setup
+#Intro
 
-To get setup with the starter-code, you first need to run:
+![alt text](https://i.imgur.com/jXWH2iZ.jpg)
 
-```sh
-$ bower install && gulp install
-```
+It was a long hard road but we made it in the end!
 
-## How is gulp setup?
+Looking for Scrim is my final project of my WDI course and it is a team forming platform for competitive MOBA game League of Legends (link). Players don't have a dedicated platform and use LoL's forums in order to find more players.
 
-Rather than trying to manage one giant `gulpfile.js` that is file responsible for creating multiple tasks, each task has been broken out into its own file and placed in a directory `tasks`. Any files in that directory get automatically required in the gulpfile using the `require-dir` npm package.
+Looking for Scrim (LFS) is built using Ruby on Rails and AngularJS and has data models with complex relationships.
 
-To add a new task, simply add a new task file that directory.
+#Features
 
-/tasks/default.js specifies the default set of tasks to run
-when you run `gulp`.
+The homepage features a carousel with brief titles of what this website can be used for.
 
-Configuration options are stored in the `package.json` file.
+The user needs to register and log in in order to read or post ads and they are able to comment on other users' ads. Users are able to edit and delete ads.
 
-When deploying, ensure that a `postinstall` script has been added to
-your package.json, e.g.
+![alt text](https://i.imgur.com/TsmmhN6.png)
 
-```json
-"postinstall": "bower install && gulp deploy"
-```
+#Styling
 
-This setup expects that there is a bower.json file with at least ONE package
-installed. This will created a bower_components directory after
-the postinstall script has run.
+The project's styling is based on LoL's rank progression (Bronze, Silver, Gold, Platinum, etc) and I have used art and fonts from the game client itself so that it reflects perfectly on the brand.
 
-When deploying, this setup expects that the NODE_ENV is set to `production`.
-Also that the NPM_CONFIG_PRODUCTION is set to `false`. Then you can also set the API_URL to be the correct URL for your deployed app. This will automatically replace `http://localhost:4000` to be the correct url.
+![alt text](https://i.imgur.com/0Rnrl8a.png)
 
-You can do this by running:
+I used Bootstrap once again due to lack of time! I believe I may have become a master at manipulating it! The homepage carousel used is Slick.
 
-```bash
-$ heroku config:set NODE_ENV=production
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
+#Challenges
 
-# An example url
-$ heroku config:set API_URL=https://project-on-heroku.herokuapp.com/
-```
+This is the only WDI project I failed to deploy on Heroku but I endeavour to have a deeper look into what is wrong soon!
 
-### Bower overrides
+There are a couple of styling "features" that need attending to and a few functionality bugs, the most prominent being that the user cannot access their account page and that the hamburger menu appears open when resized to mobile.
 
-Sometimes, you might want to `override` the `main` file(s) for a specific Bower component. You can do this directly inside the `bower.json` file like this:
+The main challenge was definitely time once again and having been ill and absent for one day set me back a lot more than anticipated.
 
-```json
-"overrides": {
-  "bootstrap": {
-    "main": [
-      "dist/css/bootstrap.css",
-      "dist/js/bootstrap.js",
-      "dist/fonts/*"
-    ]
-  },
-  "font-awesome": {
-    "main": [
-      "css/font-awesome.css",
-      "fonts/*"
-    ]
-  }
-},
-```
+Authentication was a challenge since for some reason the token was not read as it should but along with my instructors we managed to overcome it successfully!
+
+#Future possible additions
+
+An API to check and import player stats, rank and match ratings.
+
+#Easter Eggs
+
+In order to display the website's functionality I chose to use characters from the popular TV Series House of Cards (note that this was made before the Kevin Spacey scandal). Please enjoy some of the comments if you're familiar with the show!
+
+![alt text](https://i.imgur.com/lCCFprl.png)
+
+![alt text](https://i.imgur.com/O8SJ4xo.png)
